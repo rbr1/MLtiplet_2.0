@@ -1,0 +1,10 @@
+Package: MLtiplet
+Type: Package
+Title: scRNA-seq doublet/multiplet detection using multi-omic profiling
+Version: 0.1.1
+Author: c(person("Rachael", "Bashford-Rogers", ,"rbr1@well.ox.ac.uk", role = c("aut", "cre")),person("Bo","Sun", "bo.sun@ndcn.ox.ac.uk", role = c("aut")))
+Maintainer: The package maintainer <rbr1@well.ox.ac.uk>
+Description: The computational detection and exclusion of cellular doublets/multiplets is a cornerstone for the identification the true biological signals from single-cell RNAseq (scRNA-seq) data. Current methods do not sensitively identify both heterotypic and homotypic doublets/multiplets. Here, we describe a machine learning approach for doublet/multiplet detection utilising VDJ-seq and/or CITE-seq information to predict their presence based on transcriptional features associated with identified hybrid droplets. This approach highlights the utility of leveraging multi-omic single cell information for the generation of high-quality datasets. Our method has high sensitivity and specificity in inflammatory-cell dominant scRNA-seq samples, thus presenting a powerful approach to ensuring high quality scRNA-seq data.
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
