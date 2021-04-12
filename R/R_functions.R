@@ -38,7 +38,7 @@ Get_cell_type_score<-function(object, cell_type_label = "cell_type_overall"){
   subset_ids = NULL
   for(c in c(1:length(cell_types))){
     w = which(cell_type == cell_types[[c]])
-    w = rownames(data@meta.data)[w]
+    w = rownames(object@meta.data)[w]
     if(length(w)>400){
       w = sample(w, 400)
     }
@@ -50,7 +50,7 @@ Get_cell_type_score<-function(object, cell_type_label = "cell_type_overall"){
   for(c in c(1:length(cell_types))){
     w = data.markers[which(data.markers[,"cluster"]==cell_types[c]),]
     w1 = w[rev(order(w[,"myAUC"])),"gene"][c(1:10)]
-    data <- Seurat::AddModuleScore(object = object,features = list(w1),ctrl = 5,name = concat(c("ModuleScore_",cell_types[c])))
+    object <- Seurat::AddModuleScore(object = object,features = list(w1),ctrl = 5,name = concat(c("ModuleScore_",cell_types[c])))
   }
   marker_array = object@meta.data[,grep("ModuleScore", colnames(object@meta.data))]
   return(marker_array)
