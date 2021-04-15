@@ -34,7 +34,7 @@ GetMitRibRatio <- function(object, mitrib=NULL, mito = NULL){
 Get_cell_type_score<-function(object, cell_type_label = "cell_type_overall"){
   Idents(object = object) <- cell_type_label
   cell_type = Seurat::Idents(object = object) 
-  cell_types = sort(unique(object@meta.data$cell_type_overall))
+  cell_types = sort(unique(cell_type))
   subset_ids = NULL
   for(c in c(1:length(cell_types))){
     w = which(cell_type == cell_types[[c]])
