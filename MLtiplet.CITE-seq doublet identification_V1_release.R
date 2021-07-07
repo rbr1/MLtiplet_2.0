@@ -1,23 +1,12 @@
-# RECITublet R script v1.0 (last updated 02/09/2020)
+# RECITublet R script v1.0 (last updated 07/07/2021)
 # Author: Rachael Bashford-Rogers (Wellcome Centre for Human Genetics, University of Oxford, rbr1@well.ox.ac.uk)
 # This script will identify scRNA-seq droplets that have features of doublets/multiplets based on CITE-seq information
 
-# run as an interactive job via: qlogin -pe shmem 4 -P immune-rep.prjc -q short.qc
-# module loadings: 
-# qlogin -pe shmem 4 -P immune-rep.prjc -q short.qc
-module purge
-module load HDF5/1.10.5-gompi-2019a
-module load umap-learn/0.3.10-foss-2019a-Python-3.7.2
-module load Seurat/3.1.2-foss-2019a-R-3.6.0
-module load Harmony/1.0.0-foss-2019a-R-3.6.0
-R
-
 #### identifying VDJ doublets/multiplets
 #### load requirements
-library("Seurat")
-library('harmony') 
+library(Seurat)
+library(harmony) 
 library(ggplot2)
-
 
 concat = function(v) {
 	res = ""
